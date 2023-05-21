@@ -156,8 +156,11 @@ def main() -> int:
     logging.basicConfig(format="[%(levelname)-9s] %(message)s", level=logging.DEBUG)
     logger = logging.getLogger()
 
-    if sys.argv[1] == "test":
-        subprocess.run(["/usr/sbin/sshd"], check=True)
+    try:
+        if sys.argv[1] == "test":
+            subprocess.run(["/usr/sbin/sshd"], check=True)
+    except IndexError:
+        pass
 
     args = [
         os.environ.pop("INPUT_TARGET"),
