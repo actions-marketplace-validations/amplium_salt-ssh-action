@@ -1,0 +1,7 @@
+---
+somehost:
+  host: 127.0.0.1
+  user: testuser
+  passwd: testpass
+...
+# vim: set ft=yaml:

@@ -1,0 +1,12 @@
+---
+root_dir: /github/workspace/
+
+file_roots:
+  base:
+    - salt/
+
+pillar_roots:
+  base:
+    - pillar/
+
+# vim: set ft=yaml:
