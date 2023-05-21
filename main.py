@@ -89,11 +89,7 @@ def setup_known_hosts(context: Context) -> None:
     """
     If available, write to the known hosts file.
     """
-    sshdir = os.path.join(os.environ["HOME"], ".ssh")
-    known_hosts_file = os.path.join(sshdir, "known_hosts")
-
-    os.mkdir(sshdir)
-    os.chmod(sshdir, 0o700)
+    known_hosts_file = "/etc/ssh/ssh_known_hosts"
 
     if "KNOWN-HOSTS" in context.inputs:
         known_hosts = base64.b64decode(context.inputs.pop("KNOWN-HOSTS"))
